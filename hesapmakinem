@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <math.h>
+
+float Addition (float, float);
+float Subtraction (float,float); 
+float Multiplication (float,float);
+float Division (float,float);
+float Power (float,float);
+
+int main(void)
+{	int number;
+	float x,y;
+	printf("Enter first and second number please: ");
+	scanf("%f %f",&x,&y);
+	printf("Please chose your operation \n1 for Addition \n2 for Subtraction \n3 for multiplication \n4 for Division \n5 for power\n");
+	scanf("%d",&number);
+	
+	switch(number)
+	{	
+		case 1:
+			Addition(x,y);
+			
+		break;
+		
+		case 2:
+			Subtraction(x,y);
+
+		break;
+		
+		case 3:
+			Multiplication(x,y);
+		
+		break;
+		
+		case 4:
+			Division(x,y);
+			
+		break;
+		
+		case 5:
+			Power(x,y);
+		
+		break;
+		
+		default:
+			printf("Error, you chose wrong operator number");
+			
+	}	
+	return 0;
+}
+float Addition (float x, float y)
+{
+	printf("%f + %f = %f",x,y,x+y);
+}
+
+float Subtraction (float x,float y)
+{
+	printf("%f - %f = %f\n",x,y,x-y);
+}
+
+float Multiplication (float x, float y)
+{
+	printf("%f * %f = %f",x,y,x*y);
+}
+
+float Division (float x, float y)
+{
+	if (y==0)
+	{
+	printf("This division can not be calculated. Because divider can not be 0");	
+	}else		
+	{
+	printf("%f / %f = %f",x,y,x/y);	
+	}
+}
+
+float Power (float x,float y)
+{
+	float r=pow(x,y);
+	printf("%f ^ %f = %f",x,y,r);
+
+}
+	
